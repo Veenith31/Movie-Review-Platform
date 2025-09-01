@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5001;
 
 // Define CORS options with your live frontend URL
 const corsOptions = {
-  origin: 'https://movie-review-pl.netlify.app',
+  origin: 'https://movie-review-pl.netlify.app',  
   optionsSuccessStatus: 200
 };
 // Use CORS middleware with your options
