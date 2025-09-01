@@ -23,7 +23,7 @@ export interface MovieDetails extends Movie {
   reviews: Review[];
   average_rating: number | string; 
 }   
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL = 'https://movie-review-platform.onrender.com';
 
 export const fetchMovies = async (params?: { search?: string, genre?: string }): Promise<Movie[]> => {
   try {
