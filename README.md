@@ -106,7 +106,9 @@ DELETE	/api/watchlist/:movieId	Remove movie from watchlist
 GET	/api/users/me/reviews	Get all reviews by current user
 GET	/api/users (Admin)	Get all users
 DELETE	/api/users/:id (Admin)	Delete user by ID
+
 📂 Project Structure
+
 MovieFlix/
 ├── client/          # Frontend (React + Vite + TypeScript)
 │   ├── public/
