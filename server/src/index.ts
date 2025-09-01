@@ -1,10 +1,10 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import pool from './db'; // Import the database pool
+import pool from './db';
 
 import authRoutes from './routes/authRoutes';
-import movieRoutes from './routes/movieRoutes'; 
+import movieRoutes from './routes/movieRoutes';
 import watchlistRoutes from './routes/watchlistRoutes';
 import userRoutes from './routes/userRoutes';
 import adminRoutes from './routes/adminRoutes';
@@ -14,18 +14,23 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors());
+// Define CORS options with your live frontend URL
+const corsOptions = {
+  origin: 'https://68b5988c9b43b70008553b32--movie-review-pl.netlify.app',
+  optionsSuccessStatus: 200
+};
+
+// Use CORS middleware with your options
+app.use(cors(corsOptions));
+
+// Use JSON parsing middleware
 app.use(express.json());
 
-
+// API routes
 app.use('/api/auth', authRoutes);
-
-app.use('/api/movies', movieRoutes); // 👈 Use movie routes
-
+app.use('/api/movies', movieRoutes);
 app.use('/api/watchlist', watchlistRoutes);
-
-app.use('/api/users', userRoutes); 
-
+app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
 
 app.get('/api/healthcheck', (req: Request, res: Response) => {
