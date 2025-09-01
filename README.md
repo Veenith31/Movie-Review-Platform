@@ -1,8 +1,8 @@
-MovieFlix - A Modern Movie Review Platform
+**MovieFlix - A Modern Movie Review Platform**
 MovieFlix is a feature-rich, full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js) that allows users to discover, review, and discuss their favorite films. It provides a seamless and interactive experience for movie enthusiasts to engage with a community of like-minded individuals.
 
 
-Features
+**Features**
 User Authentication: Secure user registration and login system using JWT for stateless authentication.
 
 Dynamic Movie Catalog: Browse, search, and filter a vast collection of movies fetched from the OMDB API.
