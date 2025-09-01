@@ -1,0 +1,70 @@
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 60px; 
+  background: url('https://assets.nflxext.com/ffe/siteui/vlv3/51e5354A-0536-422B-B0A7-432293ECC9B3/b2803b07-e6f0-49e3-9993-9d18b26498a4/IN-en-20240325-POP_SIGNUP_TWO_WEEKS-perspective_WEB_db933B07_large.jpg') no-repeat center center/cover;
+}
+
+.formContainer {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 4rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  color: var(--primary-text);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  background-color: #333;
+  border: 1px solid #555;
+  color: var(--primary-text);
+  border-radius: 4px;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-text);
+}
+
+.button {
+  background-color: var(--accent-color);
+  color: var(--primary-text);
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.errorMessage {
+  color: #e87c03; 
+  font-size: 0.9rem;
+  margin-top: -1rem;
+  text-align: center;
+}

@@ -1,0 +1,61 @@
+.reviewForm {
+  background-color: var(--secondary-background);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-text);
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: var(--primary-text);
+  font-size: 1rem;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  resize: vertical; /* Allow vertical resizing only for textarea */
+}
+
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-color); /* Highlight on focus */
+}
+
+.textarea::placeholder {
+  color: #888;
+}
+
+.submitButton {
+  background-color: var(--accent-color);
+  color: var(--primary-text);
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  width: 100%; 
+}
+
+.submitButton:hover {
+  background-color: #f40612; 
+}
+
+.errorMessage {
+  color: #e87c03;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
