@@ -110,7 +110,7 @@ DELETE	/api/users/:id (Admin)	Delete user by ID
 📂 Project Structure
 
 MovieFlix/
-├── client/          # Frontend (React + Vite + TypeScript)
+├── client/         # Frontend React application
 │   ├── public/
 │   ├── src/
 │   │   ├── assets/
@@ -123,7 +123,7 @@ MovieFlix/
 │   ├── .gitignore
 │   ├── index.html
 │   └── package.json
-└── server/          # Backend (Node.js + Express + PostgreSQL)
+└── server/         # Backend Express application
     ├── src/
     │   ├── controllers/
     │   ├── db/
