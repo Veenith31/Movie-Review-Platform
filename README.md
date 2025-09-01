@@ -1,57 +1,58 @@
-**MovieFlix - A Modern Movie Review Platform**
-MovieFlix is a feature-rich, full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js) that allows users to discover, review, and discuss their favorite films. It provides a seamless and interactive experience for movie enthusiasts to engage with a community of like-minded individuals.
+MovieFlix - A Modern Movie Review Platform
 
+MovieFlix is a feature-rich, full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js) and PostgreSQL that allows users to discover, review, and discuss their favorite films. It provides a seamless and interactive experience for movie enthusiasts to engage with a community of like-minded individuals.
 
-**Features**
-User Authentication: Secure user registration and login system using JWT for stateless authentication.
+🚀 Features
 
-Dynamic Movie Catalog: Browse, search, and filter a vast collection of movies fetched from the OMDB API.
+🔐 User Authentication – Secure registration and login using JWT (stateless authentication).
 
-Detailed Movie Information: View comprehensive details for each movie, including synopsis, director, genre, and ratings.
+🎞 Dynamic Movie Catalog – Browse, search, and filter movies fetched from the OMDB API.
 
-User Reviews and Ratings: Authenticated users can post, read, and rate movie reviews.
+📖 Detailed Movie Information – View synopsis, director, genre, and ratings.
 
-Personalized Watchlist: Curate a personal watchlist by adding or removing movies with a single click.
+📝 User Reviews & Ratings – Authenticated users can post, read, and rate reviews.
 
-Admin Dashboard: A protected area for administrators to manage users and site content.
+🎯 Personalized Watchlist – Add or remove movies with one click.
 
-Responsive Design: A mobile-first, responsive user interface that works seamlessly across all devices.
+🛠 Admin Dashboard – Protected area for admins to manage users & content.
 
-Tech Stack
+📱 Responsive Design – Mobile-first UI, works seamlessly across all devices.
+
+🛠 Tech Stack
 Backend
-Node.js: JavaScript runtime for the server.
 
-Express: Fast, unopinionated, minimalist web framework for Node.js.
+Node.js – JavaScript runtime
 
-PostgreSQL: Robust, open-source relational database.
+Express – Fast, minimalist web framework
 
-bcryptjs: Library for hashing passwords.
+PostgreSQL – Robust relational database
 
-jsonwebtoken (JWT): For implementing user authentication.
+bcryptjs – Password hashing
 
-cors: For enabling Cross-Origin Resource Sharing.
+jsonwebtoken (JWT) – Authentication
 
-dotenv: For managing environment variables.
+cors – Cross-Origin Resource Sharing
 
-express-validator: For request data validation.
+dotenv – Environment variable management
+
+express-validator – Request data validation
 
 Frontend
-React: A JavaScript library for building user interfaces.
 
-Vite: Next-generation front-end tooling for a faster and leaner development experience.
+React – UI library
 
-TypeScript: Statically typed superset of JavaScript.
+Vite – Next-gen frontend tooling
 
-React Router: For declarative routing in a React application.
+TypeScript – Statically typed JS
 
-Axios: Promise-based HTTP client for the browser and Node.js.
+React Router – Declarative routing
 
-CSS Modules: For locally scoped CSS.
+Axios – HTTP client
 
-Getting Started
-To get a local copy up and running, follow these simple steps.
+CSS Modules – Scoped styling
 
-Prerequisites: 
+⚙️ Getting Started
+Prerequisites
 
 Node.js (v14 or later)
 
@@ -60,54 +61,54 @@ npm (v6 or later)
 PostgreSQL
 
 Installation
+1️⃣ Clone the repo:
+git clone https://github.com/your_username/Movie-Review-Platform.git
+cd Movie-Review-Platform
 
-1. Clone the repo:
-    git clone https://github.com/your_username/Movie-Review-Platform.git
-    cd Movie-Review-Platform
+2️⃣ Backend Setup
+cd server
+npm install
 
-2. Backend Setup
-    cd server
-    npm install
 
-3.Create a .env file in the server directory and add the following environment variables:
+Create a .env file inside server/:
+
 PORT=5001
 DATABASE_URL="postgresql://<user>:<password>@<host>:<port>/<database>"
 JWT_SECRET="your_jwt_secret"
 OMDB_API_KEY="your_omdb_api_key"
 
-Set up the database tables:
+
+Setup database tables:
+
 npm run db:setup
 
-Start the backend server:
+
+Start backend server:
+
 npm run dev
 
-Frontend Setup
+3️⃣ Frontend Setup
 cd ../client
 npm install
-
-Start the frontend development server:
 npm run dev
 
-API Endpoints
-The following are the available API endpoints:
-
+📡 API Endpoints
 Method	Endpoint	Description
 POST	/api/auth/register	Register a new user
-POST	/api/auth/login	    Log in an existing user
-GET	    /api/auth/me	    Get the current user's profile
-GET	    /api/movies	        Get a list of all movies
-GET	    /api/movies/:id	    Get details for a single movie
-POST	/api/movies/:id/reviews	Add a review to a movie
-GET	/   api/watchlist	Get the current user's watchlist
-POST	/api/watchlist/:movieId	Add a movie to the watchlist
-DELETE	/api/watchlist/:movieId	Remove a movie from the watchlist
-GET	/api/users/me/reviews	Get all reviews by the current user
-GET	/api/users	(Admin) Get a list of all users
-DELETE	/api/users/:id	(Admin) Delete a user by ID
-
-Project Structure
-tmov/
-├── client/         # Frontend React application
+POST	/api/auth/login	Log in an existing user
+GET	/api/auth/me	Get current user's profile
+GET	/api/movies	Get all movies
+GET	/api/movies/:id	Get single movie details
+POST	/api/movies/:id/reviews	Add a review
+GET	/api/watchlist	Get user's watchlist
+POST	/api/watchlist/:movieId	Add movie to watchlist
+DELETE	/api/watchlist/:movieId	Remove movie from watchlist
+GET	/api/users/me/reviews	Get all reviews by current user
+GET	/api/users (Admin)	Get all users
+DELETE	/api/users/:id (Admin)	Delete user by ID
+📂 Project Structure
+MovieFlix/
+├── client/          # Frontend (React + Vite + TypeScript)
 │   ├── public/
 │   ├── src/
 │   │   ├── assets/
@@ -120,7 +121,7 @@ tmov/
 │   ├── .gitignore
 │   ├── index.html
 │   └── package.json
-└── server/         # Backend Express application
+└── server/          # Backend (Node.js + Express + PostgreSQL)
     ├── src/
     │   ├── controllers/
     │   ├── db/
