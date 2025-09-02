@@ -1,5 +1,7 @@
 MovieFlix - A Modern Movie Review Platform
 
+Live website link: https://movie-review-pl.netlify.app
+
 MovieFlix is a feature-rich, full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js) and PostgreSQL that allows users to discover, review, and discuss their favorite films. It provides a seamless and interactive experience for movie enthusiasts to engage with a community of like-minded individuals.
 
 🚀 Features
