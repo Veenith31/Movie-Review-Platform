@@ -3,14 +3,23 @@ import { useEffect, useState } from 'react';
 import { fetchMovies } from '../services/api';
 import type { Movie } from '../services/api';
 import MovieCard from '../components/MovieCard';
-import styles from './HomePage.module.css'; 
+import styles from './HomePage.module.css';
+
+const SkeletonCard = () => (
+  <div className={styles.skeletonCard}>
+    <div className={styles.skeletonImage}></div>
+    <div className={styles.skeletonText}></div>
+    <div className={styles.skeletonTextShort}></div>
+  </div>
+);
+
 
 const HomePage = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
   
-  // State for our filters
   const [searchTerm, setSearchTerm] = useState('');
   const [genre, setGenre] = useState('');
 
@@ -29,19 +38,21 @@ const HomePage = () => {
       }
     };
 
-   
     const debounceTimer = setTimeout(() => {
         getMovies();
-    }, 500); // 500ms delay
+    }, 500); 
 
     return () => clearTimeout(debounceTimer);
-  }, [searchTerm, genre]); 
+  }, [searchTerm, genre]);
 
   return (
     <div className={styles.homePage}>
-      <h1 className={styles.title}>Browse Movies</h1>
-      
-      {/*  Filter and Search UI */}
+      <div className={styles.header}>
+        <h1 className={styles.title}>Browse Movies</h1>
+        <p className={styles.subtitle}>Find your next favorite film</p>
+      </div>
+
+   
       <div className={styles.filters}>
         <input
           type="text"
@@ -59,24 +70,24 @@ const HomePage = () => {
           <option value="Sci-Fi">Sci-Fi</option>
           <option value="Action">Action</option>
           <option value="Thriller">Thriller</option>
-          {/* Add more genres as needed */}
+        
         </select>
       </div>
 
-      {loading && <p>Loading movies...</p>}
       {error && <p className={styles.error}>{error}</p>}
       
-      {!loading && !error && (
-        <div className={styles.movieGrid}>
-          {movies.length > 0 ? (
-            movies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
-            ))
-          ) : (
-            <p>No movies found matching your criteria.</p>
-          )}
-        </div>
-      )}
+      <div className={styles.movieGrid}>
+        {loading ? (
+          
+          Array.from({ length: 8 }).map((_, index) => <SkeletonCard key={index} />)
+        ) : movies.length > 0 ? (
+          movies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))
+        ) : (
+          <p className={styles.noResults}>No movies found matching your criteria.</p>
+        )}
+      </div>
     </div>
   );
 };
